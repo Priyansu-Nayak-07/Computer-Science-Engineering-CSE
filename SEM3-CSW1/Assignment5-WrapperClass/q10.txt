@@ -1,0 +1,42 @@
+public class q10 {
+    public static void main(String[] args) {
+        String expression = "123+345";  // Example input
+        char operation = ' ';           // To store the operation (+, -, *, /)
+        
+        // Identify the operation and split the string
+        if (expression.contains("+")) {
+            operation = '+';
+        } else if (expression.contains("-")) {
+            operation = '-';
+        } else if (expression.contains("*")) {
+            operation = '*';
+        } else if (expression.contains("/")) {
+            operation = '/';
+        }
+
+        // Split the string based on the operation found
+        String[] parts = expression.split("[\\+\\-\\*/]");
+        int num1 = Integer.parseInt(parts[0]);
+        int num2 = Integer.parseInt(parts[1]);
+        int result = 0;
+
+        // Perform the calculation based on the operation
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Sum = " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Difference = " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Multiplication = " + result);
+                break;
+            case '/':
+                result = num1 / num2;
+                System.out.println("Division = " + result);
+                break;
+        }
+    }

@@ -1,0 +1,18 @@
+public class q9 {
+    public static void main(String[] args) {
+        String intStr = "42";
+        String floatStr = "3.14";
+        String doubleStr = "2.71828";
+        String booleanStr = "true";
+
+        Integer intObject = Integer.valueOf(intStr);
+        Float floatObject = Float.valueOf(floatStr);
+        Double doubleObject = Double.valueOf(doubleStr);
+        Boolean booleanObject = Boolean.valueOf(booleanStr);
+
+        System.out.println("Integer object from string: " + intObject);
+        System.out.println("Float object from string: " + floatObject);
+        System.out.println("Double object from string: " + doubleObject);
+        System.out.println("Boolean object from string: " + booleanObject);
+    }
+}

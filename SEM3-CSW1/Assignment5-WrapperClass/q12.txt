@@ -1,0 +1,7 @@
+public class q12 {
+    public static void main(String[] args) {
+        String numStr = "42";
+        int num = Integer.parseInt(numStr);
+        System.out.println("Int base type from string: " + num);
+    }
+}

@@ -1,0 +1,7 @@
+public class q11{
+    public static void main(String[] args) {
+        String numStr = "2.71828";
+        double num = Double.parseDouble(numStr);
+        System.out.println("Double base type from string: " + num);
+    }
+}

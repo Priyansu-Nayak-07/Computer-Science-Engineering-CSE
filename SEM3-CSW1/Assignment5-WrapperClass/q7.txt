@@ -1,0 +1,7 @@
+public class q7 {
+    public static void main(String[] args) {
+        String numStr = "2.71828";
+        Double doubleObject = Double.valueOf(numStr);
+        System.out.println("Double object from string: " + doubleObject);
+    }
+}

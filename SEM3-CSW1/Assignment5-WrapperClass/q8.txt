@@ -1,0 +1,8 @@
+public class q8
+ {
+    public static void main(String[] args) {
+        String boolStr = "true";
+        Boolean booleanObject = Boolean.valueOf(boolStr);
+        System.out.println("Boolean object from string: " + booleanObject);
+    }
+}

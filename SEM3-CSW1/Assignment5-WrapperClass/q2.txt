@@ -1,0 +1,7 @@
+public class q2 {
+    public static void main(String[] args) {
+        float num = 3.14f;
+        Float floatObject = Float.valueOf(num);
+        System.out.println("Float object: " + floatObject);
+    }
+}

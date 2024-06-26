@@ -1,0 +1,7 @@
+public class q5{
+    public static void main(String[] args) {
+        String numStr = "42";
+        Integer integerObject = Integer.valueOf(numStr);
+        System.out.println("Integer object from string: " + integerObject);
+    }
+}
