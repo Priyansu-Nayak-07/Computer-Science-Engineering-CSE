@@ -1,0 +1,31 @@
+.dropdown {
+    width: 200px;
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+.dropdown option {
+    padding: 10px;
+}
+
+.dropdown option[value="option1"] {
+    font-family: Arial, sans-serif;
+    color: #00698f;
+    font-size: 18px;
+    background-color: #f0f0f0;
+}
+
+.dropdown option[value="option2"] {
+    font-family: Courier, monospace;
+    color: #8b0a1a;
+    font-size: 16px;
+    background-color: #ffe0e0;
+}
+
+.dropdown option[value="option3"] {
+    font-family: Georgia, serif;
+    color: #008000;
+    font-size: 20px;
+    background-color: #c6efce;
+}

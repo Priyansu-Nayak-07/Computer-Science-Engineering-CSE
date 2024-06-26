@@ -1,0 +1,25 @@
+.table 
+{
+    display: table;
+    width: 350px;
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+.tr
+{
+    display: table-row;
+}
+.tc
+{
+    display: table-cell;
+    padding: 8px 12px;
+    border: 2px solid rgb(209, 88, 88);
+}
+.tr:nth-child(odd)
+{
+    background-color: rgb(78, 165, 165);
+}
+.tc:first-child
+{
+    font-weight: bold;
+}

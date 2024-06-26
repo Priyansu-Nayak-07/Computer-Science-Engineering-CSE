@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Upload with Progress Bar</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom styles for progress bar -->
+  <style>
+   
+    #progress-container {
+      width: 60%;
+      margin: 50px auto;
+      height: 25px;
+    }
+
+    #progress-bar {
+      width: 0%;
+      height: 30px;
+      background-color: #007bff;
+      text-align: center;
+      line-height: 30px;
+      color: rgb(0, 0, 0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2 class="mt-5">File Upload with Progress Bar</h2>
+
+    <form id="upload-form">
+      <div class="custom-file mt-3">
+        <input type="file" class="custom-file-input" id="file-input" name="file" required>
+        <label class="custom-file-label" for="file-input">Choose file</label>
+      </div>
+
+      <button type="button" class="btn btn-primary mt-3">Upload</button>
+    </form>
+
+    <div id="progress-container" class="progress mt-3">
+      <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">100%</div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+
+$(document).ready(function () {
+            $("#file-input").change(function (e) {
+                $("button").click(function () {
+                    e.preventDefault();
+                    var files = $("#file-input").prop("Files");
+                    for (var i = 0; i < 101; i++) {
+                        $("#progress-bar").css({ "width": i + "%" });
+                    }
+                });
+                
+            });
+            // window.alert("File Uploaded Successfully");
+
+        });
+    // function uploadFile() {
+    //   const fileInput = document.getElementById('file-input');
+    //   const file = fileInput.files[0];
+
+    //   if (!file) {
+    //     alert('Please select a file.');
+    //     return;
+    //   }
+
+    //   const formData = new FormData();
+    //   formData.append('file', file);
+
+    //   const progressBar = document.getElementById('progress-bar');
+
+    //   fetch('YOUR_BACKEND_UPLOAD_URL', {
+    //     method: 'POST',
+    //     body: formData,
+    //     headers: {
+    //       // Add any headers if needed
+    //     },
+    //   })
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     console.log('File upload successful:', data);
+    //     progressBar.style.width = '100%';
+    //     progressBar.textContent = 'Upload complete';
+    //   })
+    //   .catch(error => {
+    //     console.error('Error uploading file:', error);
+    //     progressBar.style.width = '0%';
+    //     progressBar.textContent = 'Upload failed';
+    //   });
+
+    //   // Display progress
+    //   progressBar.textContent = 'Uploading...';
+    //   const progressBarWidth = progressBar.style.width;
+
+    //   const interval = setInterval(() => {
+    //     if (parseInt(progressBar.style.width) >= 100) {
+    //       clearInterval(interval);
+    //     } else {
+    //       const newWidth = parseInt(progressBar.style.width) + 1;
+    //       progressBar.style.width = newWidth + '%';
+    //       progressBar.textContent = newWidth + '%';
+    //     }
+    //   }, 50);
+    // }
+  </script>
+
+</body>
+</html>

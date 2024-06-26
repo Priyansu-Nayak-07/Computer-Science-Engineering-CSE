@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Manipulation and Element Removal</title>
+    <style>
+        table {
+            width: 50%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            margin-right: 10px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#addRowButton').click(function(){
+                var newRow = '<tr><td>New Row</td></tr>';
+                $('#myTable').append(newRow);
+            });
+            $('#changeColorButton').click(function(){
+                $(this).css('color', 'red');
+            });
+            $('#removeByIdButton').click(function(){
+                var idToRemove = $('#removeByIdInput').val();
+                $('#' + idToRemove).remove();
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h2>Table Manipulation and Element Removal</h2>
+<button id="addRowButton">Add Row to Table</button>
+<table id="myTable">
+    <thead>
+        <tr>
+            <th>Column 1</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Row 1</td>
+        </tr>
+        <tr>
+            <td>Row 2</td>
+        </tr>
+    </tbody>
+</table>
+<button id="changeColorButton">Change Button Text Color</button>
+<input type="text" id="removeByIdInput" placeholder="Enter ID to Remove">
+<button id="removeByIdButton">Remove Element by ID</button>
+
+</body>
+</html>

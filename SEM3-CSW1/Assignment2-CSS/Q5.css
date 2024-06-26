@@ -1,0 +1,19 @@
+ul{
+    list-style-type: none;
+    overflow: auto;
+  
+
+   }
+   li{
+    float: right;
+
+   }
+   li a{
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+   }
+   li a:hover{background-color: blueviolet;}

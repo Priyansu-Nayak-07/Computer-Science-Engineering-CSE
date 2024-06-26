@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .choices button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .choices button:hover {
+            background-color: #ddd;
+        }
+        .result {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .score {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+    </style>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var userScore = 0;
+            var computerScore = 0;
+
+            $('.choice-btn').click(function() {
+                var userChoice = $(this).attr('id');
+                var computerChoice = generateComputerChoice();
+                var result = getRoundResult(userChoice, computerChoice);
+                displayRoundResult(userChoice, computerChoice, result);
+                updateScore(result);
+            });
+
+            function generateComputerChoice() {
+                var choices = ['rock', 'paper', 'scissors'];
+                var randomIndex = Math.floor(Math.random() * choices.length);
+                return choices[randomIndex];
+            }
+
+            function getRoundResult(user, computer) {
+                if (user === computer) {
+                    return 'draw';
+                } else if (
+                    (user === 'rock' && computer === 'scissors') ||
+                    (user === 'paper' && computer === 'rock') ||
+                    (user === 'scissors' && computer === 'paper')
+                ) {
+                    return 'win';
+                } else {
+                    return 'lose';
+                }
+            }
+
+            function displayRoundResult(userChoice, computerChoice, result) {
+                var resultText = '';
+                if (result === 'win') {
+                    resultText = 'You win!';
+                } else if (result === 'lose') {
+                    resultText = 'You lose!';
+                } else {
+                    resultText = 'It\'s a draw.';
+                }
+                $('.result').html('You chose ' + userChoice + '. Computer chose ' + computerChoice + '. ' + resultText);
+            }
+
+            function updateScore(result) {
+                if (result === 'win') {
+                    userScore++;
+                } else if (result === 'lose') {
+                    computerScore++;
+                }
+                $('.score').html('Score: You ' + userScore + ' - Computer ' + computerScore);
+            }
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <h1>Rock Paper Scissors</h1>
+
+    <div class="choices">
+        <button id="rock" class="choice-btn">Rock</button>
+        <button id="paper" class="choice-btn">Paper</button>
+        <button id="scissors" class="choice-btn">Scissors</button>
+    </div>
+
+    <div class="result">Choose your move!</div>
+    <div class="score">Score: You 0 - Computer 0</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Count Paragraphs</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var numberOfP = $('#selected p').length;
+            console.log("Number of <p> elements: " + numberOfP);
+            $('#count').text("Number of <p> elements: " + numberOfP);
+        });
+    </script>
+</head>
+<body>
+    <div id="selected">
+        <p>Red</p>
+        <p>White</p>
+        <p>Green</p>
+        <p>Black</p>
+        <p>Blue</p>
+        <p>Orange</p>
+    </div>
+    <div id="count"></div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Popup Box</title>
+    <style>
+        .popup {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        }
+        .popup-content {
+            background-color: #fefefe;
+            margin: 15% auto; 
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; 
+            text-align: center;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Custom Popup Box Example</h2>
+<button id="popupButton">Show Popup</button>
+<div id="myPopup" class="popup">
+    <div class="popup-content">
+        <span class="close">&times;</span>
+        <p>This is a custom popup box!</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var popup = document.getElementById('myPopup');
+        var btn = document.getElementById('popupButton');
+        var span = document.getElementsByClassName('close')[0];
+        btn.onclick = function() {
+            popup.style.display = 'block';
+        }
+        span.onclick = function() {
+            popup.style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target == popup) {
+                popup.style.display = 'none';
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

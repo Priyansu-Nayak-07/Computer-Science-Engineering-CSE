@@ -1,0 +1,23 @@
+body{
+    height: 4000px;
+    background-color: beige;
+  }
+ ul{
+  list-style-type: none;
+  overflow: hidden;
+  position: fixed;
+
+ }
+ li{
+  float: left;
+
+ }
+ li a{
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  background-color: black;
+  font-weight: bold;
+  color: white;
+ }
+ li a:hover{background-color: blueviolet;}

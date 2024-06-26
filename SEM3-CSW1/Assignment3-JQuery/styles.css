@@ -1,0 +1,46 @@
+
+nav {
+    background-color:aqua;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  section {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .team-member {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    position: relative;
+  }
+  
+  .expand-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+  }
+  
+  .hidden-content {
+    display: none;
+  }
+  
+  #errorMessage {
+    color: red;
+  }
+  

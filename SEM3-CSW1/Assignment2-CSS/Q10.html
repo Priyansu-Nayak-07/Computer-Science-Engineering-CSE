@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="Q10.css">
+    <style>
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="./images/soalogo.png" alt="SOA Logo">
+            <h1>Registration</h1>
+        </div>
+        <form>
+            <div class="form-group">
+                <label>UserName:</label>
+                <input type="text" id="username" name="username" placeholder="username" required>
+              </div>
+              <div class="form-group">
+                  <label>Email:</label>
+                  <input type="email" id="email" name="email" placeholder="email" required>
+              </div>
+              <div class="form-group">
+                <label>Mobile:</label>
+                <input type="number" id="mobile" name="mobile" placeholder="phone number " required>
+              </div>
+              <div>
+                  <b><label>Gender:</label></b>
+                  <input type="radio" id="male" name="gender" value="male" >
+                  Male
+                  <input type="radio" id="female" name="gender" value="female">
+                  Female
+              </div> <br>
+              <div class="form-group">
+                  <label>City:</label>
+                  <select id="city" name="city">
+                      <option value disabled selected>Select City</option>
+                      <option >Bhubaneswar</option>
+                      <option >Cuttack</option>
+                      <option >Bhadrak</option>
+                  </select>
+              </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" id="password" name="password" placeholder="password" required>
+                <div class="password-requirements">Password must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number.</div>
+            </div>
+            <button type="submit" class="submit-button">Register</button>
+        </form>
+    </div>
+</body>
+</html>

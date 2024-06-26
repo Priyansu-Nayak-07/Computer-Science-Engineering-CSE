@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Methods Example</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            display: none; 
+            margin: 20px;
+        }
+    </style>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // slideDown() method
+            $('#slideDownButton').click(function(){
+                $('#box').slideDown();
+            });
+
+            // animate() method
+            $('#animateButton').click(function(){
+                $('#box').animate({left: '250px', height: '150px', width: '150px'});
+            });
+
+            // fadeIn() method
+            $('#fadeInButton').click(function(){
+                $('#box').fadeIn();
+            });
+
+            // hide() method
+            $('#hideButton').click(function(){
+                $('#box').hide();
+            });
+
+            // show() method
+            $('#showButton').click(function(){
+                $('#box').show();
+            });
+
+            // mouseenter() method
+            $('#box').mouseenter(function(){
+                $(this).css('background-color', 'lightgreen');
+            });
+
+            // dblclick() method
+            $('#box').dblclick(function(){
+                $(this).css('background-color', 'lightcoral');
+            });
+
+            // mouseleave() method
+            $('#box').mouseleave(function(){
+                $(this).css('background-color', 'lightblue');
+            });
+
+            // attr() method
+            $('#attrButton').click(function(){
+                var src = $('#image').attr('src');
+                alert('Image source: ' + src);
+            });
+
+            // html() method
+            $('#htmlButton').click(function(){
+                $('#content').html('<p>New HTML content added!</p>');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<h2>jQuery Methods Example</h2>
+<button id="slideDownButton">Slide Down</button>
+<button id="animateButton">Animate</button>
+<button id="fadeInButton">Fade In</button>
+<button id="hideButton">Hide</button>
+<button id="showButton">Show</button>
+<button id="attrButton">Get Image Source</button>
+<button id="htmlButton">Change HTML Content</button>
+<div id="box"></div>
+<img id="image" src="./images/ITER.png" alt="Placeholder Image">
+<div id="content">
+    <p>Original HTML content.</p>
+</div>
+
+</body>
+</html>
